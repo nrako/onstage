@@ -1,0 +1,12 @@
+<a title="Step <%= order %>"><%= order %> :
+  <% if (anims.size() === 1) { %>
+    <%= anims.first().get('name') %>
+  <% } %>
+</a>
+<% if (anims.size() > 1) { %>
+    <ul>
+    <% anims.each(function (anim, index) { %>
+      <li><%= index %> : <%= anim.get('name') %></li>
+    <% }); %>
+    </ul>
+<% } %>

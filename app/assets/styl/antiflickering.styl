@@ -1,0 +1,54 @@
+//anti flickering measures
+antiflickering()
+  // not sure that backface-visiblity prevent anything but it might help
+  backface-visibility: hidden;
+
+  // for all (blocks) elements
+  > *
+    transform: translate3d(0%,0%,1px)
+
+  // transform doesn't works on inline elements yet!
+  // list of all inline html5 elements
+  > a
+  > abbr
+  > address
+  > area
+  > audio
+  > b
+  > cite
+  > code
+  > del
+  > details
+  > dfn
+  > command
+  > datalist
+  > em
+  > font
+  > i
+  > iframe
+  > img
+  > input
+  > ins
+  > kbd
+  > label
+  > legend
+  > link
+  > mark
+  > meter
+  > nav
+  > optgroup
+  > option
+  > q
+  > small
+  > select
+  > source
+  > span
+  > strong
+  > sub
+  > summary
+  > sup
+  > tbody
+  > td
+  > time
+  > var
+    display: inline-block

@@ -1,0 +1,11 @@
+extends layoutplayer
+
+block content
+  h1= title
+
+  div#template
+    include presentations/test.html
+
+  <!-- Main container. -->
+  a(href="/testurl") testurl
+  div(role="main", id="main")

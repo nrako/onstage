@@ -1,0 +1,16 @@
+{
+  "globals": {
+    "define": true,
+    "require": true
+  },
+  "browser": true,
+  "devel": true,
+  "strict": true,
+  "newcap": true,
+  "noarg": true,
+  "quotmark": "single",
+  "undef": true,
+  "unused": false,
+  "trailing": true,
+  "maxdepth": 4
+}

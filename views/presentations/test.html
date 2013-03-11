@@ -1,0 +1,99 @@
+  <div id="testpres">
+    <h1>Local Presentation</h1>
+    <section title="Welcome">
+      <h1 data-anim='{"duration": "3s", "auto": true}'>Title slide</h1>
+      <h2 data-anim='{"auto": "afterprevious"}'>Subtitle slide</h2>
+    </section>
+    <section title="Slide basics">
+      <h1>Title basics</h1>
+      <ul data-anim='{"order": 0, "q":"li", "classes": {"-1": "carrou-prev", "0": "carrou-pres", "1": "carrou-next"}}'>
+        <li>List 1</li>
+        <li>List 2</li>
+        <li>List 3</li>
+        <li>List 4</li>
+        <li>List 5</li>
+        <li>List 6</li>
+        <li>List 7</li>
+        <li>List 8</li>
+        <li>List 9</li>
+        <li>List 10</li>
+      </ul>
+    </section>
+    <section title="Slide basics in and out">
+      <h1>Title basics</h1>
+      <ul data-anim='[{"order": 0, "q": "li"}, {"order": 1, "direction": "desc", "q": "li", "defaultClass": null, "classes": {"0": "fadeout"}}]'>
+        <li>List 1</li>
+        <li>List 2</li>
+        <li>List 3</li>
+        <li>List 4</li>
+        <li>List 5</li>
+      </ul>
+    </section>
+    <section title="Empty slide">
+      <h1>Test empty slide!!!</h1>
+    </section>
+    <section title="Second slide">
+      <h1>Title slide 2</h1>
+      <span>Test</span><strong>Strong text</strong><b>b text</b><i>Italic text</i>
+      <ul data-anim='{"order": 0, "q":"$, > li"}' style="border: 1px solid #eee; background-color: #ddd;">
+        <li>List 1 <span data-anim>SPAN To be animated all list and span of list3</span></li>
+        <li>List 2 <span>To not be animated</span></li>
+        <li>List 3 <span data-anim='{"order":1}'>To be animated right after list</span></li>
+        <li>List 4</li>
+      </ul>
+      <ul>
+        <li data-anim>List 1 <span data-anim>To be animated after list1</span></li>
+        <li>List 2 <span data-anim='{"auto": "afterprevious"}'>To be animated after list2 automatically</span></li>
+        <li>List 2.5 <span data-anim='{"auto": "withprevious"}'>To be animated with list3 automatically</span></li>
+        <li>List 3 <span data-anim='{"order":3}'>To be animated after SPAN of list 1 of first list</span></li>
+        <li>List 4</li>
+      </ul>
+    </section>
+    <!--
+    <section data-anim='[{"order": 2, "q": "> p:odd, strong", "auto": "afterprevious"}, {"order": 0, "q": "> p:even"}]'>
+      <h1 data-anim='{"order":"1"}'>Title slide 3</h1>
+      <ol data-anim>
+        <li>list to be animated after paragraphe 2</li>
+        <li>2</li>
+        <li>3</li>
+      </ol>
+      <p>Paragraphe 1 to be animated</p>
+      <p id="wow" data-anim='{"order": 4, "classes": {"0": "fadeout"}}'>Paragraphe 2 to be animated IN and OUT</p>
+      <div>
+        <p>Paragraphe in DIV to NOT be animated</p>
+      </div>
+      <div data-anim>
+        <span>parent content to be animated after paragraphe</span>
+        <p data-anim='{"order": "3"}'>paragraphe to be animated before parent</p>
+      </div>
+      <p>Paragraphe 3 to be animated</p>
+      <strong>Strong text</strong>
+    </section>
+    <section data-anim='[{"order": 2, "q": "> p:odd, strong", "auto": "afterprevious"}, {"order": 1, "q": "> p:even"}]'>
+      <h1 data-anim='{"order":""}'>Title slide 4</h1>
+      <p>First paragraphe to be animated</p>
+      <p data-anim='{"order": 3, "classes": {"0": "fadeout"}}'>Paragraphe 2 to be animated IN and OUT</p>
+      <div>
+        <p>Paragraphe in DIV to NOT be animated</p>
+      </div>
+      <p>Paragraphe 3 to be animated</p>
+      <p>Paragraphe 4 to be animated</p>
+      <p>Paragraphe 5 to be animated</p>
+      <p>Paragraphe 6 to be animated</p>
+    </section>
+    <section title="Image">
+      <img src="http://imgs.xkcd.com/comics/slides.png" alt="XKCD" width="476" height="405"/>
+    </section>
+    <section>
+      <form>
+        <label>Input text</label>
+        <input type="text" />
+        <label for="thecheckbox"><input id="thecheckbox" type="checkbox" /> Input Checkbox</label>
+        <label>Button</label>
+        <input type="button" value="Click me" onclick="javascript:alert('okay')" />
+      </form>
+    </section>
+    <section>
+      <iframe width="640" height="360" src="http://www.youtube.com/embed/cwbJgCXT3tE" frameborder="0" allowfullscreen></iframe>
+    </section> -->
+  </div>

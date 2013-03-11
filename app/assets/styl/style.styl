@@ -1,0 +1,45 @@
+@import 'nib'
+
+display(type)
+  if box == type || flex == type
+    display: vendor-value(type)
+  else
+    display: type
+
+flex()
+  vendor('flex', arguments, only: webkit official)
+
+flex-direction()
+  vendor('flex-direction', arguments, only: webkit official)
+
+justify-content()
+  vendor('justify-content', arguments, only: webkit official)
+
+align-items()
+  vendor('align-items', arguments, only: webkit official)
+
+@import 'h5bp.css'
+@import 'animations'
+@import 'onstage'
+@import 'ui'
+@import 'fontawe'
+@import 'debug'
+
+body
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+a
+  color: #00B7FF
+
+.background1
+  //background: linear-gradient(top, rgba(57,18,25,1), rgba(25,54,179,1))
+  background: -webkit-radial-gradient(center 100px, cover, rgb(200, 200, 254) 0%, rgb(100, 94, 100) 100%)
+  z-index: 200
+
+#stage
+  .prev
+  .current
+  .next
+    background-color: #fff
+    display: flex
+    justify-content: center
+    align-items: center

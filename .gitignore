@@ -1,0 +1,7 @@
+npm-debug.log
+*.sublime-workspace
+components
+node_modules
+.grunt
+docs
+dist
