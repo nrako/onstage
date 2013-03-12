@@ -7,7 +7,8 @@ Onstage (WIP)
 
 ## Introduction
 
-*Again this is a work in progress, and it's not ready for prime-time and I don't advise anyone to use it. Refactoring in progress!*
+*Again this is a work in progress, and it's not ready for prime-time and I don't advise anyone to
+use it. Refactoring in progress!*
 
 HTML5 presentation framework with emphasis on modern browser.
 
@@ -27,7 +28,7 @@ The most usefull javascript frontend state-of-the-arts tools!
 
 ## TODO
 
-A lot, and FYI a lot of refactoring and stripping is planified.
+A lot, FYI a lot of refactoring and stripping is planified.
 
 * Implement Testacular
 * Code some Jasmine tests before the refactoring phase
@@ -53,34 +54,41 @@ A lot, and FYI a lot of refactoring and stripping is planified.
 
 ## Motivation
 
-There is plenty of useful HTML presentation library already:
+Yet an another presentation library?
 
 * [impress.js](https://github.com/bartaz/impress.js/) — HTML Prezy like
 * [io-2002-slides](https://code.google.com/p/io-2012-slides/) — Google IO slide deck
-* [Reveal.js](https://github.com/hakimel/reveal.js) — Nested slid
+* [Reveal.js](https://github.com/hakimel/reveal.js) — Nested slides, markdown etc.
 * [CSSS](https://github.com/LeaVerou/CSSS) — CSS-based SlideShow System
-* [Flowtime.js](https://github.com/marcolago/flowtime.js)
+* [Flowtime.js](https://github.com/marcolago/flowtime.js) — HTML5/CSS3/JS Presentation Framework
+* [Deck.js](https://github.com/imakewebthings/deck.js) — Modern HTML Presentations
 
-So you may want to use one of them, or you might be interested in this tool if you want
-a tool that aim to suppor the two simple following statements :
+You may want to use one of them, at least for now, or you might be interested in this tool if you want
+a tool that aim to support the following statements :
 
-*HTML5 is ready and it's the best solution for presentation content. And a presentation support a
-story which follow a simple timeline and doesn't really have any meaning* **only by itself**.
+*Life is too short and Web technologies advances too fast to care for older browsers.*
 
-So this library will not have complicate navigation, or allows presentation with sub-chapter,
-nested slides or any other fancy navigation. But more importantly this tool is build in a way
-that a presentation can cohexist with something else, it may be a real human presenter, or
-a media.
+HTML5 is ready and is the best solution for presentation content not Flash, Canvas, or html4 with
+polyfills. Cross-old-browser compability is not a priority.
 
-Presentation without a voice or a video is utterly rubbish!
+*A presentation without a voice, a video or a soundtrack is utterly rubbish!*
+
+A presentation support a story which follow a simple timeline, a presentation doesn't have any
+meaning only by itself.
+
+This library will not provide complicate navigation, or allows presentation with sub-chapter,
+nested slides or any other fancy navigation.
+
+This tool aim to allow a presentation cohexist with something else, it may be a real human
+presenter, or a media.
 
 In the future, features may look like that:
 
-* HTML/CSS based presentation with support for preprocessor.
+* HTML/CSS based presentation content with support for preprocessor.
 * Provide full ability to shape and style the slides and backgrounds.
 * Doesn't force any animation, none, opacity transition, transform matrix3d... whatever you like.
-* Cool friendly URL
-* Fragments support for step by step navigation inside a slide.
+* Cool friendly URL with pushState history API
+* Fragments support for step by step navigation inside a slide — with normal behaviour.
 * Simple navigation following a timeline, no sub-chapter or nested slides.
 * Keyboard shortcuts for navigation.
 * Overview mode.
@@ -89,7 +97,8 @@ In the future, features may look like that:
 your markdown content etc.
 * an API.
 * Provide a real timeline!
-* ...
+* Work on mobile pad (with webkit updated)
+* ... and more that I can't disclose now ;)
 
 This library will most definitevly make use of cool new HTML5 features such as Shadow DOM, WebRTC etc.
 — So yes I don't care of IE or older browsers, I don't have time to handle this.
