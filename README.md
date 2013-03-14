@@ -79,7 +79,7 @@ meaning only by itself.
 This library will not provide complicate navigation, or allows presentation with sub-chapter,
 nested slides or any other fancy navigation.
 
-This tool aim to allow a presentation cohexist with something else, it may be a real human
+This tool aim to allow a presentation to cohexist with something else, it may be a real human
 presenter, or a media.
 
 In the future, features may look like that:
@@ -97,7 +97,7 @@ In the future, features may look like that:
 your markdown content etc.
 * an API.
 * Provide a real timeline!
-* Work on mobile pad (with webkit updated)
+* Work on mobile pad (with fresh webkit)
 * ... and more that I can't disclose now ;)
 
 This library will most definitevly make use of cool new HTML5 features such as Shadow DOM, WebRTC etc.
