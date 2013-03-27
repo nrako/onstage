@@ -2,6 +2,7 @@
 
 var path = require('path'),
     fs = require('fs'),
+    requireJsConfig = require('./app/config'),
     jade = require('jade');
 
 // This is the main application configuration file.  It is a Grunt
@@ -173,13 +174,7 @@ module.exports = function(grunt) {
         helpers: 'test/jasmine/spec/**/*Helper.js',
         template: require('grunt-template-jasmine-requirejs'),
         templateOptions: {
-          // TODO Fork grunt-template-jasmine-requirejs (maybe use the one with istanbul)
-          // TODO add a templateOptions to directly set the data-main attribute on src=require.js
-          // TODO remvoe this non-sense
-          configFile: './app/config',
-          requireConfig: {
-            baseUrl: './app/'
-          }
+          requireConfig: requireJsConfig
         }
       }
     },
