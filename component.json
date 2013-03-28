@@ -6,9 +6,9 @@
     "./dist/debug/require.js"
   ],
   "dependencies": {
-    "jquery": "~1.8.3",
+    "jquery": "latest",
     "backbone": "latest",
-    "lodash": "~0.7.1",
+    "lodash": "latest",
     "requirejs": "latest",
     "keymaster": "latest",
     "backbone-shortcuts": "git://github.com/bry4n/backbone-shortcuts.git",

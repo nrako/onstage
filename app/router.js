@@ -71,7 +71,7 @@ function(_, $, Backbone, app, Stage, Menu, Presentation, Slide, Background, Temp
     },
 
     index: function() {
-      console.log('INDEX ROUTE');
+      console.log('INDEX ROUTE', arguments);
     },
 
     local: function(presId, slideRef, stepIndex) {

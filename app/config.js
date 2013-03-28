@@ -20,7 +20,7 @@
 
         // Libraries.
         jquery: '../components/jquery/jquery',
-        lodash: '../components/lodash/lodash',
+        lodash: '../components/lodash/dist/lodash.underscore',
         keymaster: '../components/keymaster/keymaster',
         backbone: '../components/backbone/backbone',
         layoutmanager: '../components/layoutmanager/backbone.layoutmanager',

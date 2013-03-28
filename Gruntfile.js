@@ -58,7 +58,6 @@ module.exports = function(grunt) {
     jst: {
       compile: {
         options: {
-          amd: true,
           prettify: true
         },
         files: {
@@ -191,8 +190,7 @@ module.exports = function(grunt) {
     copy: {
       debug: {
         files: {
-          'dist/debug/app/': 'app/**',
-          'dist/debug/vendor/': 'vendor/**'
+          'dist/debug/css/h5bp.css': 'app/assets/css/h5bp.css'
         }
       },
       release: {
@@ -229,8 +227,8 @@ module.exports = function(grunt) {
           compress: false
         },
         files: {
-          'dist/debug/index.css': 'app/assets/styl/index.styl', // 1:1 compile
-          'dist/debug/style.css': 'app/assets/styl/style.styl' // 1:1 compile
+          'dist/debug/css/index.css': 'app/assets/styl/index.styl', // 1:1 compile
+          'dist/debug/css/style.css': 'app/assets/styl/style.styl' // 1:1 compile
           //'path/to/another.css': ['path/to/sources/*.styl', 'path/to/more/*.style'], // compile and concat into single file
           //'path/to/*.css': ['path/to/sources/*.styl', 'path/to/more/*.styl'] // compile individually into dest, maintaining folder structure
         }
@@ -392,7 +390,7 @@ module.exports = function(grunt) {
   // dist/debug/require.js, and then concatenate the require/define shim
   // almond.js and dist/debug/templates.js into the require.js file.
   // generate the css files with stylus
-  grunt.registerTask('debug', ['clean:dist', 'jshint', 'jst', 'requirejs', 'concat', 'stylus']);
+  grunt.registerTask('debug', ['clean:dist', 'jshint', 'jst', 'requirejs', 'concat', 'stylus', 'jade:debug', 'copy:debug']);
 
   // The release task will run the debug tasks and then minify the
   // dist/debug/require.js file and CSS files.

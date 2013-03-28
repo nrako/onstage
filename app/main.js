@@ -5,12 +5,10 @@ require([
   'app',
 
   // Main Router.
-  'router',
-
-  document
+  'router'
 ],
 
-function($, Backbone, app, Router, document) {
+function($, Backbone, app, Router) {
   'use strict';
   // Define your master router on the application namespace and trigger all
   // navigation from this instance.
@@ -18,7 +16,7 @@ function($, Backbone, app, Router, document) {
 
   // Trigger the initial route and enable HTML5 History API support, set the
   // root folder to '/' by default.  Change in app.js.
-  Backbone.history.start({ pushState: true, root: app.root });
+  Backbone.history.start({ pushState: app.config.pushState, root: app.config.root });
 
   // All navigation that is relative should be passed through the navigate
   // method, to be processed by the router. If the link has a `data-bypass`
@@ -27,7 +25,7 @@ function($, Backbone, app, Router, document) {
     // Get the absolute anchor href.
     var href = { prop: $(this).prop('href'), attr: $(this).attr('href') };
     // Get the absolute root.
-    var root = document.location.protocol + '//' + document.location.host + app.root;
+    var root = document.location.protocol + '//' + document.location.host + app.config.root;
 
     // Ensure the root is part of the anchor href, meaning it's relative.
     if (href.prop.slice(0, root.length) === root) {

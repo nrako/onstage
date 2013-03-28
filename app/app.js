@@ -17,8 +17,9 @@ function($, _, Backbone) {
 
     IS_TOUCH_DEVICE: !!( 'ontouchstart' in window ),
 
-    root: '/',
     config: {
+      root: '/',
+      pushState: window.location.protocol !== 'file:',
       debug: true,
       // Display pogress bar
       progress: true,
@@ -46,7 +47,7 @@ function($, _, Backbone) {
   var JST = window.JST = window.JST || {};
 
   // Configure LayoutManager with Backbone Boilerplate defaults.
-  Backbone.LayoutManager.configure({
+  Backbone.Layout.configure({
     // Allow LayoutManager to augment Backbone.View.prototype.
     manage: true,
 
@@ -65,7 +66,7 @@ function($, _, Backbone) {
       var done = this.async();
 
       // Seek out the template asynchronously.
-      $.get(app.root + path, function(contents) {
+      $.get(app.config.root + path, function(contents) {
         done(JST[path] = _.template(contents));
       });
     }
