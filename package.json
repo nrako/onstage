@@ -4,8 +4,12 @@
   "description": "HTML5 slide deck for the real world (wide web)",
   "homepage": "http://www.nrako.com",
   "private": true,
+  "scripts": {
+    "test": "grunt test"
+  },
   "devDependencies": {
     "grunt": "latest",
+    "glob": "~3.1.21",
     "grunt-regarde": "latest",
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-jst": "latest",
@@ -13,7 +17,7 @@
     "grunt-contrib-concat": "latest",
     "grunt-contrib-mincss": "latest",
     "grunt-contrib-connect": "latest",
-    "grunt-contrib-jasmine": "latest",
+    "grunt-contrib-jasmine": "git://github.com/nrako/grunt-contrib-jasmine.git",
     "grunt-contrib-clean": "latest",
     "grunt-contrib-copy": "latest",
     "grunt-contrib-jade": "latest",

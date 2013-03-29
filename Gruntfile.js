@@ -2,7 +2,9 @@
 
 var path = require('path'),
     fs = require('fs'),
+    glob = require('glob'),
     requireJsConfig = require('./app/config'),
+    gruntJasmine = require('grunt-contrib-jasmine'),
     jade = require('jade');
 
 // This is the main application configuration file.  It is a Grunt
@@ -15,8 +17,11 @@ module.exports = function(grunt) {
 
     watch: {
       scripts: {
-        files: ['app/**/*.js'],
-        tasks: ['jasmine', 'empty']
+        options: {
+          nospawn: true
+        },
+        files: ['app/**/*.js', 'test/jasmine/**/*.js'],
+        tasks: ['blazingfastjasmine']
       }
     },
 
@@ -42,7 +47,6 @@ module.exports = function(grunt) {
         files: ['*.html', 'app/assets/css/**/*', 'app/**/*.js'],
         tasks: ['livereload']
       }
-      // todo tests
       // todo transifex
     },
 
@@ -167,8 +171,9 @@ module.exports = function(grunt) {
     // The headless Jasmine testing is provided by grunt-jasmine-task. Simply
     // point the configuration to your test directory.
     jasmine: {
-      src: 'app/modules/presentation.js',
+      src: 'app/**/*.js',
       options: {
+        keepAlive: true,
         specs: 'test/jasmine/spec/**/*Spec.js',
         helpers: 'test/jasmine/spec/**/*Helper.js',
         template: require('grunt-template-jasmine-requirejs'),
@@ -412,12 +417,37 @@ module.exports = function(grunt) {
   grunt.registerTask('test', ['jshint', 'jasmine']);
 
   // Generates the docs api (yuidoc) and inline docs (groc)
-
-  grunt.registerTask('empty', 'do nothing task', function() {});
   grunt.registerTask('docs', ['clean:docs', 'groc', 'yuidoc', 'plato']);
+
+  // blazingfastjasmine task called by watch task
+  var changedFiles = {};
+  grunt.registerTask('blazingfastjasmine', 'Run jasmine on only modified files', function() {
+    var specPath = 'test/jasmine/spec/',
+        src = [],
+        specs = [];
+
+    for (var file in changedFiles) {
+      if (changedFiles[file] === 'deleted')
+        continue;
+
+      if (/^test/.test(file)) {
+        var dir = path.dirname(file).replace(specPath, '');
+        src = src.concat(glob.sync(dir + path.sep + path.basename(file).split('.')[0] + '*.js'));
+        specs.push(file);
+      } else {
+        src.push(file);
+        specs = specs.concat(glob.sync(specPath + file.replace('.js', '*.js')));
+      }
+    }
+    changedFiles = [];
+    grunt.config.data.jasmine.src = src;
+    grunt.config.data.jasmine.options.specs = specs;
+    console.log({src: src, specs: specs});
+    grunt.task.run('jasmine');
+  });
 
   // Listen for events when files are modified
   grunt.event.on('watch', function(action, filepath) {
-    //grunt.log.writeln(filepath + ' has ' + action);
+    changedFiles[filepath] = action;
   });
 };
