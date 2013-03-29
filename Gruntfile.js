@@ -342,6 +342,17 @@ module.exports = function(grunt) {
       githooks: {
         command: 'cp git-hooks/pre-commit .git/hooks/'
       }
+    },
+
+    plato: {
+      def: {
+        options : {
+          jshint : grunt.file.readJSON('.jshintrc')
+        },
+        files: {
+          'docs/plato': ['app/**/*.js', 'test/jasmine/spec/**/*.js']
+        }
+      }
     }
 
   });
@@ -370,6 +381,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-notify');
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-groc');
+  grunt.loadNpmTasks('grunt-plato');
 
   // add grunt npm package
   // compress
@@ -400,9 +412,9 @@ module.exports = function(grunt) {
   grunt.registerTask('test', ['jshint', 'jasmine']);
 
   // Generates the docs api (yuidoc) and inline docs (groc)
-  grunt.registerTask('docs', ['clean:docs', 'groc', 'yuidoc']);
 
   grunt.registerTask('empty', 'do nothing task', function() {});
+  grunt.registerTask('docs', ['clean:docs', 'groc', 'yuidoc', 'plato']);
 
   // Listen for events when files are modified
   grunt.event.on('watch', function(action, filepath) {
